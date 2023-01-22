@@ -1,0 +1,65 @@
+.filmoteka__item {
+  padding-top: 20px;
+}
+
+.filmoteka__img {
+  border-radius: 5px;
+}
+.filmoteka__title {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+.filmoteka__box {
+  display: flex;
+  color: #ff6b08;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+.filmoteka__items {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .filmoteka__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+
+    padding-top: 60px;
+  }
+  .filmoteka__item {
+    padding-top: 0;
+  }
+  .filmoteka__title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .filmoteka__box {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .filmoteka__container {
+    gap: 32px;
+    column-gap: 16px;
+  }
+  .filmoteka__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .filmoteka__box {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
