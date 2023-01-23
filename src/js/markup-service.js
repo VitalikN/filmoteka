@@ -1,9 +1,9 @@
 import { getGenreById } from './themoviedb-api-service';
 
-const IMAGE_URL = 'https://image.tmdb.org/t/p/w300';
+const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
 export async function markupTrending(filmList, gallery) {
-  let markup = filmList.reduce(
+  const markup = filmList.reduce(
     (acc, { poster_path, release_date, genre_ids, id, title }) => {
       const genreString = getGenreById(genre_ids);
       return (acc += `<div class="film-box" data-id="${id}">
