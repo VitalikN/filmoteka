@@ -4,14 +4,17 @@ const IMAGE_URL = 'https://image.tmdb.org/t/p/w300';
 
 export async function markupTrending(filmList, gallery) {
   let markup = filmList.reduce(
-    (acc, { poster_path, release_date, genre_ids, id, original_title }) => {
+    (acc, { poster_path, release_date, genre_ids, id, title }) => {
       const genreString = getGenreById(genre_ids);
       return (acc += `<div class="film-box" data-id="${id}">
-      <img class="film-poster"src="${IMAGE_URL}${poster_path}">
-      <p>${original_title}</p>
-      <p> ${genreString}</p>
-      <p> ${parseInt(release_date)}</p>
-      <p>id: ${id}</p>
+      <img class="filmoteka__img" src="${IMAGE_URL}${poster_path}"  alt="${title}">
+      <p class="filmoteka__title"> ${title}</p>
+<div  class="filmoteka__box">
+      <p class="filmoteka__text"> ${genreString}</p>
+      <p class="filmoteka__text">             &nbsp;|&nbsp; ${parseInt(
+        release_date
+      )}</p>
+      </div>
       </div>`);
     },
     ``
@@ -33,7 +36,7 @@ export async function markupModalFilmInfo(targetFilm, modalFilmInfo) {
   } = targetFilm;
   const genreString = getGenreById(genre_ids);
   const markup = `<div class="film-info">
-         <img src="${IMAGE_URL}${poster_path}">
+         <img  src="${IMAGE_URL}${poster_path}">
          <div class="film-info-wrapper">
            <p>${title}</p>
            <p>Vote ${vote_average}</p>
