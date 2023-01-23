@@ -1,7 +1,7 @@
 import { fetchTrending } from './themoviedb-api-service';
 import { markupTrending, markupModalFilmInfo } from './markup-service';
 
-const page = 5;
+const page = 1;
 let filmList;
 
 const gallery = document.querySelector('.gallery');
